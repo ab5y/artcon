@@ -34,11 +34,22 @@
           </div>
           <div class="col-md-10">
             <div class="content">
+              <p tal:condition="not logged_in">
+                <a href="${request.application_url}/register">Register</a>
+              </p>
+              <p tal:condition="logged_in" class="pull-right">
+                <a href="${request.application_url}/logout">Logout</a>
+              </p>
+              <p>You can return to the
+                <a href="${request.application_url}">FrontPage</a>.
+              </p>
+              <p>
+                <a href="${ request.route_url('add_user', user_type_id=user_type.id) }">Add a new ${user_type.user_type}</a>
+              </p>
               <table>
                 <tbody>
                   <tr tal:repeat="user users">
-                    <!-- <td>${user.id}</td> -->
-                    <td><a>${user.name}<a></td>
+                    <td><a href="${ request.route_url('view_user', user_id=user.id) }">${user.name}<a></td>
                   </tr>
                 </tbody>
               </table>

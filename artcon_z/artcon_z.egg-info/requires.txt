@@ -7,3 +7,5 @@ transaction
 zope.sqlalchemy
 waitress
 docutils
+bcrypt
+passlib

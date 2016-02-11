@@ -6,6 +6,7 @@ production.ini
 setup.py
 artcon_z/__init__.py
 artcon_z/models.py
+artcon_z/security.py
 artcon_z/tests.py
 artcon_z/views.py
 artcon_z.egg-info/PKG-INFO
@@ -21,4 +22,9 @@ artcon_z/static/pyramid-16x16.png
 artcon_z/static/pyramid.png
 artcon_z/static/theme.css
 artcon_z/static/theme.min.css
+artcon_z/templates/edit.pt
+artcon_z/templates/login.pt
 artcon_z/templates/mytemplate.pt
+artcon_z/templates/view.pt
+artcon_z/templates/view_users.pt
+artcon_z/templates/view_usertypes.pt

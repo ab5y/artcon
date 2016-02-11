@@ -8,7 +8,7 @@
     <meta name="author" content="Pylons Project">
     <link rel="shortcut icon" href="${request.static_url('artcon_z:static/pyramid-16x16.png')}">
 
-    <title> - Pyramid artcon_z wiki (based on
+    <title>Register - Pyramid artcon_z wiki (based on
     TurboGears 20-Minute Wiki)</title>
 
     <!-- Bootstrap core CSS -->
@@ -33,16 +33,14 @@
           </div>
           <div class="col-md-10">
             <div class="content">
-              <p tal:condition="not logged_in">
-                <a href="${request.application_url}/register">Register</a>
+              <p>
+                <strong>
+                  Register
+                </strong><br>
+                <span tal:replace="message"></span>
               </p>
-              <p tal:condition="logged_in" class="pull-right">
-                <a href="${request.application_url}/logout">Logout</a>
-              </p>
-              <p>You can return to the
-                <a href="${request.application_url}">FrontPage</a>.
-              </p>
-              <form action="${save_url}" method="post">
+              <form action="${url}" method="post">
+                <input type="hidden" name="came_from" value="${came_from}">
                 <div class="form-group">
                   <select name="user_type">
                     <tal:block tal:repeat="user_type user_types">
@@ -59,14 +57,23 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <input type="text" name="name" 
-                          tal:condition="python: user != None"
-                          tal:attributes="value user.name">
-                  <input type="text" name="name"
-                          tal:condition="python: user == None">
+                  <label for="name">Name</label>
+                  <input type="text" name="name" value="${name}">
                 </div>
                 <div class="form-group">
-                  <button type="submit" name="form.submitted" value="Save" class="btn btn-default">Save</button>
+                  <label for="email">Email</label>
+                  <input type="email" name="email" value="${email}">
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" name="password" value="${password}">
+                </div>
+                <div class="form-group">
+                  <label for="confirm_password">Confirm Password</label>
+                  <input type="password" name="confirm_password" value="${confirm_password}">
+                </div>
+                <div class="form-group">
+                  <button type="submit" name="form.submitted" value="Register" class="btn btn-default">Register</button>
                 </div>
               </form>
             </div>

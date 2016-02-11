@@ -34,6 +34,12 @@
           </div>
           <div class="col-md-10">
             <div class="content">
+              <p tal:condition="not logged_in">
+                <a href="${request.application_url}/register">Register</a>
+              </p>
+              <p tal:condition="logged_in" class="pull-right">
+                <a href="${request.application_url}/logout">Logout</a>
+              </p>
               <table>
                 <tbody>
                   <tr tal:repeat="user_type user_types">

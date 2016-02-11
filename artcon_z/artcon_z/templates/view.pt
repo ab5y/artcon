@@ -32,6 +32,19 @@
           </div>
           <div class="col-md-10">
             <div class="content">
+              <div class="pull-right">
+                <tal:block tal:condition="not:logged_in">
+                  <p>
+                    <a href="${request.application_url}/login">Login</a>
+                  </p>
+                  <p>
+                    <a href="${request.application_url}/register">Register</a>
+                  </p>
+                </tal:block>
+              </div>
+              <p tal:condition="logged_in" class="pull-right">
+                <a href="${request.application_url}/logout">Logout</a>
+              </p>
               <div tal:replace="structure content">
                 User text goes here.
               </div>

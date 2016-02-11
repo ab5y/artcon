@@ -18,6 +18,8 @@ requires = [
     'zope.sqlalchemy',
     'waitress',
     'docutils',
+    'bcrypt',
+    'passlib',
     ]
 
 setup(name='artcon_z',
