@@ -20,7 +20,7 @@ class  User(Base):
     name = Column(Text, nullable=False)
     email = Column(String(64), nullable=False)
     password = Column(String(300), nullable=False)
-    # last_logged = Column(DateTime, default=datetime.datetime.utcnow)
+    last_logged = Column(DateTime, default=datetime.datetime.utcnow)
     user_type = relationship("UserType", back_populates="users")
 
     def __init__(self, name, email, user_type_id):
