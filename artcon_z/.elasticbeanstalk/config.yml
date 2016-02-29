@@ -1,0 +1,11 @@
+branch-defaults:
+  default:
+    environment: tilop-dev
+    group_suffix: null
+global:
+  application_name: tilop
+  default_ec2_keyname: MyFirstKey
+  default_platform: Python 2.7
+  default_region: us-west-2
+  profile: eb-cli
+  sc: null
